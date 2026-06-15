@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Sylvain Doré — Official Campaign Website | Florida House District 21 | Gainesville &amp; Alachua County</title>
+<meta name="description" content="Official campaign website of Dr. Sylvain Doré, Democratic candidate for Florida House of Representatives District 21. Serving Gainesville, Alachua County, Ocala, and Marion County. Fighting for affordable housing, healthcare, education, voting rights, and lower insurance costs for every family." />
+<meta name="keywords" content="Sylvain Doré, Florida House District 21, Gainesville Democrat, Alachua County, Marion County, Ocala, Florida House of Representatives, 2026 election, affordable housing, healthcare Florida, voting rights, rent relief, insurance costs, public education Florida" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://sylvaindore.us/" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sylvaindore.us/" />
+<meta property="og:title" content="Dr. Sylvain Doré — Official Campaign | Florida House District 21" />
+<meta property="og:description" content="Neuroscientist, former UF professor, and community advocate fighting for affordable housing, healthcare, and real solutions for Gainesville, Alachua County, Ocala, and Marion County." />
+<meta property="og:image" content="https://sylvaindore.us/wp-content/uploads/2024/04/Sylvain_half_shot_right-1-scaled-e1713667068594.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Sylvain Doré for Florida House — Official Campaign" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dr. Sylvain Doré — Official Campaign | Florida House District 21" />
+<meta name="twitter:description" content="Neuroscientist and community advocate running for Florida House District 21 — Gainesville, Alachua County, Ocala, and Marion County." />
+<meta name="twitter:image" content="https://sylvaindore.us/wp-content/uploads/2024/04/Sylvain_half_shot_right-1-scaled-e1713667068594.jpg" />
+
+<!-- Schema: Political Campaign / Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dr. Sylvain Doré",
+  "url": "https://sylvaindore.us",
+  "description": "Democratic candidate for Florida House of Representatives District 21, serving Gainesville, Alachua County, Ocala, and Marion County.",
+  "jobTitle": "Candidate for Florida House of Representatives, District 21",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Florida Democratic Party"
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61557299093159"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gainesville",
+    "addressRegion": "FL",
+    "postalCode": "32601",
+    "addressCountry": "US"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ── TOKENS ── */
+  :root {
+    --gold:       #C9A84C;
+    --gold-light: #E8C97A;
+    --navy:       #0D1B2A;
+    --navy-mid:   #1A2E42;
+    --white:      #FAFAF8;
+    --off:        #F3F1EC;
+    --text:       #1C1C1C;
+    --muted:      #6B6B6B;
+    --rule:       #D8D2C4;
+    --ff-head:    'Playfair Display', Georgia, serif;
+    --ff-body:    'DM Sans', sans-serif;
+    --max:        1160px;
+    --ease:       cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--white);
+    color: var(--text);
+    font-family: var(--ff-body);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── UTILITY ── */
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+  .label {
+    font-family: var(--ff-body);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .rule { width: 48px; height: 2px; background: var(--gold); display: block; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250, 250, 248, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  nav.scrolled {
+    border-color: var(--rule);
+    box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .nav-logo img {
+    height: 52px;
+    width: auto;
+  }
+  .nav-wordmark {
+    font-family: var(--ff-head);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--navy);
+  }
+  .nav-wordmark span {
+    display: block;
+    font-family: var(--ff-body);
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .btn-donate {
+    background: var(--gold);
+    color: var(--navy) !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .btn-donate:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    padding-top: 68px;
+    animation: fadeIn 0.6s var(--ease) both;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 2rem;
+    max-width: 600px;
+    margin-left: auto;
+  }
+  .hero-district {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .hero-district .rule { width: 32px; }
+  .hero-h1 {
+    font-family: var(--ff-head);
+    font-size: clamp(2.6rem, 4vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+  }
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 440px;
+    margin-bottom: 2.5rem;
+    line-height: 1.75;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    border: 2px solid var(--navy);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--navy);
+    transform: translateY(-2px);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--navy);
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    border: 2px solid var(--gold);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+  }
+  .btn-secondary:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+  }
+  .hero-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--off);
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--white) 0%, transparent 12%);
+  }
+
+  /* ── QUOTE BAND ── */
+  #quote-band {
+    background: var(--navy);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  .quote-text {
+    font-family: var(--ff-head);
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-style: italic;
+    color: var(--white);
+    max-width: 820px;
+    margin: 0 auto 1.25rem;
+    line-height: 1.55;
+  }
+  .quote-attr {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    padding: 7rem 0;
+    background: var(--white);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .about-image-wrap {
+    position: relative;
+  }
+  .about-image-wrap img {
+    width: 100%;
+    border-radius: 2px;
+    filter: grayscale(8%);
+  }
+  .about-image-wrap::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    right: 18px;
+    bottom: 18px;
+    border: 2px solid var(--gold);
+    border-radius: 2px;
+    z-index: -1;
+  }
+  .about-label { margin-bottom: 1.25rem; }
+  .about-h2 {
+    font-family: var(--ff-head);
+    font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .about-body { color: var(--muted); font-size: 0.97rem; margin-bottom: 1rem; }
+  .about-body:last-of-type { margin-bottom: 2rem; }
+  .about-creds {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-top: 1.75rem;
+  }
+  .about-cred {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+  .about-cred span { color: var(--muted); font-weight: 300; }
+
+  /* ── HEART SECTION ── */
+  #priorities {
+    padding: 7rem 0;
+    background: var(--navy);
+  }
+  .heart-inner {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .heart-graphic-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .heart-graphic-wrap img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+  }
+  .heart-content { }
+  .heart-label {
+    font-family: var(--ff-body);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+  .heart-h2 {
+    font-family: var(--ff-head);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .heart-h2 .gold { color: var(--gold); }
+  .heart-lead {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .heart-body {
+    font-size: 0.92rem;
+    color: rgba(250,250,248,0.6);
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+  }
+  .heart-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .heart-pill {
+    border: 1.5px solid rgba(201,168,76,0.45);
+    border-radius: 100px;
+    padding: 0.35rem 1rem;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .heart-pill:hover {
+    background: rgba(201,168,76,0.15);
+    border-color: var(--gold);
+  }
+  .heart-callout {
+    border-left: 3px solid var(--gold);
+    padding: 1.1rem 1.4rem;
+    background: rgba(201,168,76,0.07);
+    border-radius: 0 4px 4px 0;
+  }
+  .heart-callout p {
+    font-size: 0.9rem;
+    color: rgba(250,250,248,0.75);
+    line-height: 1.75;
+  }
+  .heart-callout strong { color: var(--white); font-weight: 500; }
+  @media (max-width: 900px) {
+    .heart-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .heart-graphic-wrap img { max-width: 340px; margin: 0 auto; }
+  }
+
+  /* ── WHY SYLVAIN ── */
+  #why {
+    padding: 7rem 0;
+    background: var(--white);
+  }
+  .why-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .why-h2 {
+    font-family: var(--ff-head);
+    font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  .why-body { font-size: 0.97rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+  .why-image {
+    position: relative;
+  }
+  .why-image img {
+    width: 100%;
+    border-radius: 2px;
+  }
+  .why-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 1.25rem 1.5rem;
+    font-family: var(--ff-head);
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 600;
+    max-width: 220px;
+    line-height: 1.3;
+    border-radius: 2px;
+  }
+
+  /* ── LOGO STORY ── */
+  #logo-story {
+    padding: 6rem 0;
+    background: var(--off);
+  }
+  .logo-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .logo-img-wrap { flex-shrink: 0; }
+  .logo-img-wrap img { width: 220px; }
+  .logo-story-h3 {
+    font-family: var(--ff-head);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .logo-story-body { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.75rem; }
+
+  /* ── TAKE ACTION ── */
+  #action {
+    padding: 7rem 0;
+    background: var(--navy);
+  }
+  .action-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .action-h2 {
+    font-family: var(--ff-head);
+    font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .action-sub { font-size: 0.95rem; color: rgba(250,250,248,0.6); margin-bottom: 2.5rem; line-height: 1.75; }
+  .action-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .action-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 2px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .action-card:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: var(--gold);
+    transform: translateX(4px);
+  }
+  .action-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .action-card-title {
+    font-family: var(--ff-head);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+  .action-card-text { font-size: 0.82rem; color: rgba(250,250,248,0.5); line-height: 1.6; }
+  .contact-block { margin-top: 3rem; }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(250,250,248,0.6);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .contact-item strong { color: var(--white); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080F17;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .footer-logo img { height: 36px; margin: 0 auto 1rem; }
+  .footer-legal {
+    font-size: 0.72rem;
+    color: rgba(250,250,248,0.35);
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+  }
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .footer-social a {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    transition: opacity 0.2s;
+  }
+  .footer-social a:hover { opacity: 0.7; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 5rem 2rem 3rem; max-width: 100%; margin: 0; }
+    .hero-image { height: 55vw; }
+    .hero-image::after { background: linear-gradient(to bottom, var(--white) 0%, transparent 15%); }
+    .about-grid, .why-inner, .action-inner, .logo-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .about-image-wrap::before { display: none; }
+    .priorities-grid { grid-template-columns: 1fr 1fr; }
+    .why-badge { display: none; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 580px) {
+    .priorities-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="main-nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img
+        src="logo_dore.png"
+        alt="Sylvain Doré — Your Fighter for FL House District 21"
+        onerror="this.style.display='none'"
+      />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#priorities">Priorities</a></li>
+      <li><a href="#why">Why Sylvain</a></li>
+      <li><a href="#action">Take Action</a></li>
+      <li><a href="#action" class="btn-donate">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-district">
+      <span class="rule"></span>
+      <span class="label">Official Campaign · Florida House of Representatives · District 21</span>
+    </div>
+    <h1 class="hero-h1">
+      Dr. Sylvain Doré —<br/>Your Fighter for<br/><em>Florida House 21.</em>
+    </h1>
+    <p class="hero-sub">
+      Neuroscientist, former UF professor, and community advocate — Dr. Sylvain Doré is running to make Florida more affordable, safe, and free for every family in Gainesville, Alachua County, Ocala, and Marion County.
+    </p>
+    <div class="hero-ctas">
+      <a href="#about" class="btn-primary">Meet Dr. Doré</a>
+      <a href="#action" class="btn-secondary">Donate</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img
+      src="https://sylvaindore.us/wp-content/uploads/2024/04/Sylvain_half_shot_right-1-scaled-e1713667068594.jpg"
+      alt="Dr. Sylvain Doré"
+    />
+  </div>
+</section>
+
+<!-- ── QUOTE BAND ── -->
+<section id="quote-band">
+  <blockquote>
+    <p class="quote-text">"Every politician should be reminded every day that government works for the people, and not the other way around."</p>
+    <cite class="quote-attr">— Dr. Sylvain Doré</cite>
+  </blockquote>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <img
+          src="https://sylvaindore.us/wp-content/uploads/2024/04/Sylvain_half_shot_right-1-scaled-e1713667068594.jpg"
+          alt="Dr. Sylvain Doré — portrait"
+        />
+      </div>
+      <div class="reveal">
+        <p class="label about-label">Meet the Candidate</p>
+        <h2 class="about-h2">Meet Dr. Sylvain Doré</h2>
+        <p class="about-body">
+          Sylvain Doré is a renowned brain doctor and former professor of Anesthesiology and Neuroscience at the University of Florida. Originally from Neuville, Québec, he served for thirteen years at UF, rising to the university's Board of Trustees before retiring to focus on his passions for politics, real estate, and philanthropy.
+        </p>
+        <p class="about-body">
+          As an active Democrat, Sylvain believes that with the right changes and leadership, Florida can become the safest and most affordable state in the nation. He is running on a platform of affordable housing, lower insurance costs, healthcare access, voting rights, and strong public education — real solutions for working families in Gainesville, Alachua County, Ocala, and Marion County.
+        </p>
+        <p class="about-body" style="font-size:0.82rem; color:var(--gold); border:1px solid var(--rule); padding:0.75rem 1rem; border-radius:2px;">
+          🌐 <strong>sylvaindore.us</strong> is the official campaign website for Dr. Sylvain Doré. A previous campaign site used the domain sylvaindore.com — please always use <strong>sylvaindore.us</strong> for official campaign information.
+        </p>
+        <div class="about-creds">
+          <div class="about-cred">Professor of Anesthesiology &amp; Neuroscience <span>— University of Florida</span></div>
+          <div class="about-cred">Member, UF Board of Trustees</div>
+          <div class="about-cred">Philanthropist &amp; Community Advocate</div>
+          <div class="about-cred">Democrat <span>— Florida House District 21</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── H.E.A.R.T. ── -->
+<section id="priorities">
+  <div class="container">
+    <div class="heart-inner">
+
+      <div class="heart-graphic-wrap reveal">
+        <img src="FOLLOW_HEART.png" alt="Follow your H.E.A.R.T. — Healthcare, Education, Arts, Research, Transportation" />
+      </div>
+
+      <div class="heart-content reveal">
+        <span class="heart-label">The Golden Rule</span>
+        <h2 class="heart-h2">Follow your<br/><span class="gold">H.E.A.R.T.</span></h2>
+        <p class="heart-lead">District 21 deserves real solutions — better health care, better schools, better roads, a safer environment, and stronger communities.</p>
+        <p class="heart-body">That is Dr. Doré's Golden Rule: follow your H.E.A.R.T. The idea connects his name — Doré, meaning "golden" in French — with a practical agenda rooted in service, compassion, and common sense.</p>
+        <div class="heart-pills">
+          <span class="heart-pill">Healthcare</span>
+          <span class="heart-pill">Education</span>
+          <span class="heart-pill">Arts</span>
+          <span class="heart-pill">Research</span>
+          <span class="heart-pill">Transportation</span>
+        </div>
+        <div class="heart-callout">
+          <p>With the ongoing crises facing Florida families, Dr. Doré believes it is time to stop the political games in Tallahassee and focus every debate on delivering real solutions <strong>for the people of District 21.</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY SYLVAIN ── -->
+<section id="why">
+  <div class="container">
+    <div class="why-inner">
+      <div class="reveal">
+        <span class="label" style="display:block;margin-bottom:1.25rem;">Why Dr. Doré</span>
+        <h2 class="why-h2">From the Lab to the Legislature</h2>
+        <p class="why-body">
+          After dedicating decades to academia as a brain doctor, Sylvain felt compelled to extend his reach by engaging in public service. While his work in education and research significantly benefited his students, he sought a broader platform to effect change on a larger scale.
+        </p>
+        <p class="why-body">
+          Becoming a state representative will enable Dr. Doré to influence laws and policies that directly affect the lives of countless Floridians — making the state more affordable, accessible, and safe for working families.
+        </p>
+        <p class="why-body">
+          Having nurtured success among his students and colleagues, Dr. Doré sees his candidacy as a natural progression toward promoting the well-being of all Floridians through effective governance and leadership. Above all, his deep-rooted desire to care for people drives him to serve.
+        </p>
+      </div>
+      <div class="why-image reveal">
+        <img
+          src="https://sylvaindore.us/wp-content/uploads/2024/06/Syl_Yolo5-215x300.jpg"
+          alt="Sylvain Doré with YOLO"
+        />
+        <div class="why-badge">"You Only<br/>Live Once"<br/>— YOLO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOGO STORY ── -->
+<section id="logo-story">
+  <div class="container">
+    <div class="logo-inner reveal">
+      <div class="logo-img-wrap">
+        <img
+          src="https://sylvaindore.us/wp-content/uploads/2024/04/Final-Logo-No-Backgound-with-black-outline-for-white-backgrounds-300x188.png"
+          alt="Sylvain Doré campaign logo"
+        />
+      </div>
+      <div>
+        <span class="label" style="display:block;margin-bottom:0.75rem;">The Story Behind the Logo</span>
+        <h3 class="logo-story-h3">A Brain, a Bridge, and a Name that Means Gold</h3>
+        <p class="logo-story-body">
+          As a trained brain doctor, Sylvain incorporated the brain into his logo as a symbol of intellect and innovation. With a nod to artificial intelligence, it represents the core of his life's work.
+        </p>
+        <p class="logo-story-body">
+          Both the left and right sides of the brain show a connection — symbolizing the importance of bridging different perspectives, whether on the political spectrum or the educational spectrum, linking STEM with the Arts.
+        </p>
+        <p class="logo-story-body">
+          The color gold? A simple translation of his last name: <em>Doré</em> — which means "golden" in French.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TAKE ACTION ── -->
+<section id="action">
+  <div class="container">
+    <div class="action-inner">
+      <div class="reveal">
+        <span class="label" style="display:block;margin-bottom:1.25rem;color:var(--gold);">Take Action</span>
+        <h2 class="action-h2">Help Build a Better Florida</h2>
+        <p class="action-sub">
+          Change happens when people show up. Whether you donate, volunteer, or simply spread the word — every action counts for District 21.
+        </p>
+        <div class="contact-block">
+          <div class="contact-item">📞 <strong>813-947-3007</strong></div>
+          <div class="contact-item">📍 <strong>85 SW 16th Ave, F302 · Gainesville, FL 32601</strong></div>
+          <div class="contact-item">✉️ <a href="mailto:info@sylvaindore.com" style="color:var(--gold)">info@sylvaindore.com</a></div>
+        </div>
+      </div>
+      <div class="action-cards reveal">
+        <a href="#" class="action-card">
+          <div class="action-icon">💛</div>
+          <div>
+            <div class="action-card-title">Donate</div>
+            <p class="action-card-text">Your contribution — large or small — powers the campaign to flip District 21.</p>
+          </div>
+        </a>
+        <a href="https://www.mobilize.us/sylvaindore/" target="_blank" class="action-card">
+          <div class="action-icon">🤝</div>
+          <div>
+            <div class="action-card-title">Volunteer</div>
+            <p class="action-card-text">Canvass, phone bank, or help at events. Sign up on Mobilize to get started.</p>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61557299093159" target="_blank" class="action-card">
+          <div class="action-icon">📣</div>
+          <div>
+            <div class="action-card-title">Spread the Word</div>
+            <p class="action-card-text">Follow on Facebook and X/Twitter to share updates with your community.</p>
+          </div>
+        </a>
+        <a href="https://sylvaindore.us/take-action-contact-us/" target="_blank" class="action-card">
+          <div class="action-icon">📋</div>
+          <div>
+            <div class="action-card-title">Sign Up for Updates</div>
+            <p class="action-card-text">Stay informed on events, news, and how to make your vote count in 2026.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">
+    <img
+      src="https://sylvaindore.us/wp-content/uploads/2024/04/Final-Logo-No-Backgound-with-black-outline-for-white-backgrounds-300x188.png"
+      alt="Sylvain Doré logo"
+      style="filter:brightness(0) invert(1) opacity(0.4);"
+      onerror="this.style.display='none'"
+    />
+  </div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61557299093159" target="_blank">Facebook</a>
+    <a href="https://x.com/DrDoreFL" target="_blank">X / Twitter</a>
+    <a href="mailto:info@sylvaindore.com">Email</a>
+  </div>
+  <p class="footer-legal">
+    Political advertisement paid for and approved by Dr. Sylvain Doré, Democrat, for Florida House of Representatives, District 21.<br/>
+    85 SW 16th Ave, F302 · Gainesville, FL 32601 · info@sylvaindore.com
+  </p>
+</footer>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // stagger siblings slightly
+        const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
+        const idx = siblings.indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, idx * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
