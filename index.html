@@ -5,8 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dr. Sylvain Doré — Florida House District 21 | Gainesville, FL</title>
 <meta name="description" content="Dr. Sylvain Doré is running for Florida House of Representatives District 21. Neuroscientist, former UF professor, and community advocate fighting for affordable, safe, and free Florida for every family in Gainesville and Alachua County." />
-<meta name="keywords" content="Sylvain Doré, Florida House District 21, Gainesville Democrat, Alachua County, Florida House of Representatives, 2026 election" />
+<meta name="keywords" content="Sylvain Doré, Florida House District 21, Gainesville Democrat, Alachua County, Marion County, Ocala, Gainesville Florida, Florida House of Representatives, 2026 election, official campaign site" />
 <meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://sylvaindore.us/" />
+
+<!-- Person / Political Candidate Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dr. Sylvain Doré",
+  "url": "https://sylvaindore.us/",
+  "image": "https://sylvaindore.us/assets/images/Sylvain_half_shot_right-1-scaled-e1713667068594.jpg",
+  "jobTitle": "Candidate for Florida House of Representatives, District 21",
+  "description": "Neuroscientist, former UF professor, and community advocate running for Florida House District 21 representing Gainesville, Alachua County, Marion County, and Ocala.",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Florida Democratic Party"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gainesville",
+    "addressRegion": "FL",
+    "postalCode": "32601",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61557299093159"
+  ]
+}
+</script>
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -94,15 +122,27 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(250, 250, 248, 0.92);
-    backdrop-filter: blur(12px);
+    background: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
     border-bottom: 1px solid transparent;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, -webkit-backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
   }
   nav.scrolled {
-    border-color: var(--rule);
-    box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+    background: rgba(13, 27, 42, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 0 1px 24px rgba(0,0,0,0.18);
   }
+  /* Nav text: white over hero, adjusts when scrolled (already white on navy bg) */
+  .nav-wordmark { color: var(--white); }
+  .nav-wordmark span { color: var(--gold); }
+  .nav-links a { color: rgba(250,250,248,0.85); }
+  .nav-links a:hover { color: var(--gold); }
+  .lang-toggle { color: rgba(250,250,248,0.6); border-color: rgba(250,250,248,0.25); }
+  .lang-toggle:hover { color: var(--gold); border-color: var(--gold); }
+  .hamburger span { background: var(--white); }
   .nav-inner {
     display: flex;
     align-items: center;
@@ -123,7 +163,6 @@
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.2;
-    color: var(--navy);
   }
   .nav-wordmark span {
     display: block;
@@ -132,7 +171,6 @@
     font-weight: 400;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
   }
   .nav-links {
     display: flex;
@@ -145,10 +183,8 @@
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--navy);
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--gold); }
 
   /* ── LANG TOGGLE ── */
   .lang-toggle {
@@ -180,7 +216,6 @@
   .hamburger span {
     display: block;
     height: 2px;
-    background: var(--navy);
     border-radius: 2px;
     transition: transform 0.3s var(--ease), opacity 0.3s, width 0.3s;
     transform-origin: center;
@@ -455,12 +490,13 @@
     background: var(--white);
     padding: 2.25rem 2rem;
     transition: background 0.25s;
-    cursor: default;
+    cursor: pointer;
   }
   .priority-card:hover { background: var(--navy); }
   .priority-card:hover .pc-icon { color: var(--gold); }
   .priority-card:hover .pc-title { color: var(--white); }
   .priority-card:hover .pc-text  { color: rgba(250,250,248,0.65); }
+  .priority-card:hover .pc-learn { color: var(--gold); }
   .pc-icon {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -480,6 +516,127 @@
     color: var(--muted);
     line-height: 1.65;
     transition: color 0.25s;
+  }
+  .pc-learn {
+    margin-top: 1rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    transition: color 0.25s, opacity 0.25s;
+  }
+  .priority-card:hover .pc-learn { opacity: 1; }
+
+  /* ── PRIORITY MODAL ── */
+  .pmodal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(13,27,42,0.78);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .pmodal-backdrop.open { display: flex; }
+  .pmodal {
+    background: var(--white);
+    border-radius: 3px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalIn 0.3s var(--ease) both;
+    border-top: 4px solid var(--gold);
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .pmodal-header {
+    padding: 2rem 2.5rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    z-index: 2;
+  }
+  .pmodal-title-group { display: flex; align-items: center; gap: 1rem; }
+  .pmodal-icon { font-size: 1.75rem; }
+  .pmodal-title {
+    font-family: var(--ff-head);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .pmodal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--muted);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.25rem;
+    flex-shrink: 0;
+    transition: color 0.2s;
+  }
+  .pmodal-close:hover { color: var(--navy); }
+  .pmodal-body {
+    padding: 2rem 2.5rem 2.5rem;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .pmodal-body h4 {
+    font-family: var(--ff-head);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 1.5rem 0 0.5rem;
+  }
+  .pmodal-body h4:first-child { margin-top: 0; }
+  .pmodal-body p { margin-bottom: 1rem; color: var(--muted); }
+  .pmodal-body ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  .pmodal-body ul li {
+    padding: 0.35rem 0 0.35rem 1.5rem;
+    position: relative;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .pmodal-body ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.9rem;
+    width: 8px;
+    height: 2px;
+    background: var(--gold);
+  }
+  .pmodal-footer {
+    padding: 1.25rem 2.5rem 2rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 580px) {
+    .pmodal-header, .pmodal-body, .pmodal-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .pmodal-title { font-size: 1.1rem; }
   }
 
   /* ── WHY SYLVAIN ── */
@@ -745,7 +902,10 @@
           Sylvain Doré is a renowned brain doctor and former professor of Anesthesiology and Neuroscience at the University of Florida. Originally from Neuville, Québec, he served for thirteen years at UF, rising to the university's Board of Trustees before retiring to focus on his passions for politics, real estate, and philanthropy.
         </p>
         <p class="about-body">
-          As an active Democrat, Sylvain believes that with the right changes and leadership, Florida can become the safest and most affordable state in the nation. His core values — democracy, freedom, and compassion for all people — have guided every chapter of his life.
+          As an active Democrat, Sylvain believes that with the right changes and leadership, Florida can become the safest and most affordable state in the nation. His core values — democracy, freedom, and compassion for all people — have guided every chapter of his life. He is running to serve the families of Alachua and Marion Counties — from Gainesville to Ocala.
+        </p>
+        <p class="about-body" style="font-size:0.82rem;color:var(--muted);border-left:3px solid var(--gold);padding-left:1rem;margin-top:0.5rem;">
+          <strong style="color:var(--navy);">Official campaign site:</strong> <a href="https://sylvaindore.us" style="color:var(--gold);">sylvaindore.us</a>. The domain sylvaindore.com is not affiliated with this campaign.
         </p>
         <div class="about-creds">
           <div class="about-cred">Professor of Anesthesiology &amp; Neuroscience <span>— University of Florida</span></div>
@@ -766,50 +926,41 @@
       <h2 class="section-h2">Priorities for District 21</h2>
     </div>
     <div class="priorities-grid">
-      <div class="priority-card reveal">
+      <div class="priority-card reveal" data-modal="healthcare">
         <div class="pc-icon">🏥</div>
         <div class="pc-title">Healthcare Access</div>
         <p class="pc-text">A healthy society starts with healthy people. Every Floridian deserves access to the care they need — without financial ruin.</p>
+        <div class="pc-learn">Learn more →</div>
       </div>
-      <div class="priority-card reveal">
+      <div class="priority-card reveal" data-modal="education">
         <div class="pc-icon">🎓</div>
         <div class="pc-title">Public Education</div>
         <p class="pc-text">Florida's public education system needs investment, not politicization. Dr. Doré will fight to restore standards and funding for our schools.</p>
+        <div class="pc-learn">Learn more →</div>
       </div>
-      <div class="priority-card reveal">
+      <div class="priority-card reveal" data-modal="choice">
         <div class="pc-icon">⚖️</div>
         <div class="pc-title">Right to Choose</div>
         <p class="pc-text">Access to comprehensive reproductive healthcare is a fundamental right that must be protected for every woman in Florida.</p>
+        <div class="pc-learn">Learn more →</div>
       </div>
-      <div class="priority-card reveal">
+      <div class="priority-card reveal" data-modal="costliving">
         <div class="pc-icon">🏠</div>
         <div class="pc-title">Cost of Living</div>
         <p class="pc-text">Floridians can no longer afford Florida. Rising rents, insurance, and inflation demand bold leadership — not bailouts for corporations.</p>
+        <div class="pc-learn">Learn more →</div>
       </div>
-      <div class="priority-card reveal">
+      <div class="priority-card reveal" data-modal="environment">
         <div class="pc-icon">🌿</div>
         <div class="pc-title">Environment</div>
         <p class="pc-text">Florida's environment is too precious to destroy. Dr. Doré will champion clean water, endangered species, and climate action.</p>
+        <div class="pc-learn">Learn more →</div>
       </div>
-      <div class="priority-card reveal">
+      <div class="priority-card reveal" data-modal="safety">
         <div class="pc-icon">🛡️</div>
         <div class="pc-title">Public Safety</div>
         <p class="pc-text">Safe communities require compassion and pragmatism — evidence-based programs for mental health and addiction, not just punishment.</p>
-      </div>
-      <div class="priority-card reveal">
-        <div class="pc-icon">🌾</div>
-        <div class="pc-title">Agriculture</div>
-        <p class="pc-text">"If you eat, you're involved in agriculture." Florida's farms are essential to feeding America, and our government must recognize that.</p>
-      </div>
-      <div class="priority-card reveal">
-        <div class="pc-icon">💼</div>
-        <div class="pc-title">Economic Prosperity</div>
-        <p class="pc-text">Small businesses are the backbone of our economy. Dr. Doré will level the playing field against corporate monopolies and create real opportunities.</p>
-      </div>
-      <div class="priority-card reveal">
-        <div class="pc-icon">🎭</div>
-        <div class="pc-title">Culture &amp; the Arts</div>
-        <p class="pc-text">Florida's cultural diversity is a strength. Thriving arts and cultural institutions enrich every community and deserve full support.</p>
+        <div class="pc-learn">Learn more →</div>
       </div>
     </div>
   </div>
@@ -1015,6 +1166,24 @@
   </div>
 </section>
 
+<!-- ── PRIORITY MODALS ── -->
+<div class="pmodal-backdrop" id="pmodal-backdrop" role="dialog" aria-modal="true" aria-labelledby="pmodal-title">
+  <div class="pmodal" id="pmodal">
+    <div class="pmodal-header">
+      <div class="pmodal-title-group">
+        <span class="pmodal-icon" id="pmodal-icon"></span>
+        <div class="pmodal-title" id="pmodal-title"></div>
+      </div>
+      <button class="pmodal-close" id="pmodal-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="pmodal-body" id="pmodal-body"></div>
+    <div class="pmodal-footer">
+      <a href="#donate-impact" class="btn-primary" id="pmodal-cta" style="font-size:0.72rem;">Support This Priority</a>
+      <button class="btn-secondary" id="pmodal-close-2" style="font-size:0.72rem;color:var(--navy);border-color:var(--rule);">Close</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-logo">
@@ -1070,7 +1239,156 @@
     }
   });
 
-  // Scroll reveal
+  // ── PRIORITY MODAL DATA ──
+  const modalData = {
+    healthcare: {
+      icon: '🏥',
+      title: 'Healthcare Access',
+      body: `
+        <h4>The Problem</h4>
+        <p>Florida has one of the highest rates of uninsured residents in the nation. Medical debt is the leading cause of personal bankruptcy, and rural communities — including parts of Marion County — lack basic access to specialists and emergency care.</p>
+        <h4>What Dr. Doré Will Fight For</h4>
+        <ul>
+          <li>Expand Medicaid to cover the more than 700,000 Floridians who fall in the coverage gap</li>
+          <li>Cap out-of-pocket insulin costs and prescription drug prices for seniors and working families</li>
+          <li>Protect and expand mental health services — treating mental illness as a healthcare issue, not a criminal one</li>
+          <li>Increase funding for rural health clinics in underserved areas of Alachua and Marion Counties</li>
+          <li>Oppose any legislation that allows insurance companies to deny coverage for pre-existing conditions</li>
+        </ul>
+        <h4>Why It Matters to District 21</h4>
+        <p>From Gainesville's working families to Ocala's rural communities, access to affordable healthcare is not a partisan issue — it is a human right. Dr. Doré's background as a neurocritical care physician gives him unique insight into what families face when the system fails them.</p>
+      `
+    },
+    education: {
+      icon: '🎓',
+      title: 'Public Education',
+      body: `
+        <h4>The Problem</h4>
+        <p>Florida's public schools have faced years of underfunding, politicized curriculum battles, and an exodus of experienced teachers who can no longer afford to live on a teacher's salary. Our children deserve better.</p>
+        <h4>What Dr. Doré Will Fight For</h4>
+        <ul>
+          <li>Restore full, equitable funding to public schools — no diverting taxpayer dollars to private voucher programs</li>
+          <li>Raise starting teacher pay to be competitive with neighboring states</li>
+          <li>Protect academic freedom: end political interference in school libraries and curricula</li>
+          <li>Expand access to pre-K programs for working families in Alachua and Marion Counties</li>
+          <li>Invest in vocational training and dual-enrollment programs that connect students to real careers</li>
+          <li>Strengthen the University of Florida's relationship with the surrounding community</li>
+        </ul>
+        <h4>Why It Matters to District 21</h4>
+        <p>As a former UF professor who built careers in young scientists and doctors, Dr. Doré understands firsthand that education is the great equalizer. Every child in Gainesville and Ocala deserves a world-class public education — regardless of their zip code.</p>
+      `
+    },
+    choice: {
+      icon: '⚖️',
+      title: 'Right to Choose',
+      body: `
+        <h4>The Problem</h4>
+        <p>Florida's 6-week abortion ban — before most women even know they are pregnant — has eliminated reproductive rights for millions of Floridian women. Physicians face criminal liability for providing care, and women with life-threatening complications are being forced to travel out of state.</p>
+        <h4>What Dr. Doré Will Fight For</h4>
+        <ul>
+          <li>Repeal Florida's 6-week abortion ban and restore access to reproductive healthcare</li>
+          <li>Protect physicians who provide medically necessary reproductive care from criminal prosecution</li>
+          <li>Ensure access to contraception, family planning services, and comprehensive sex education</li>
+          <li>Oppose any further legislative restrictions on reproductive autonomy</li>
+          <li>Protect IVF access for families who are trying to start or grow their families</li>
+        </ul>
+        <h4>Why It Matters to District 21</h4>
+        <p>This is not a political abstraction — it is a matter of health, safety, and dignity. Dr. Doré stands unequivocally with the women of Alachua and Marion Counties in defense of their right to make their own medical decisions in consultation with their doctors, not their legislators.</p>
+      `
+    },
+    costliving: {
+      icon: '🏠',
+      title: 'Cost of Living',
+      body: `
+        <h4>The Problem</h4>
+        <p>Florida has become one of the least affordable states in the country. Rents have increased by more than 40% in five years. Homeowner's insurance rates have skyrocketed or been cancelled entirely. Grocery bills, utility costs, and inflation have squeezed working families to the breaking point — while corporations post record profits.</p>
+        <h4>What Dr. Doré Will Fight For</h4>
+        <ul>
+          <li>Reform Florida's property insurance market to stop rate-gouging and ensure coverage is available statewide</li>
+          <li>Invest in affordable housing development and protect tenants from predatory rent increases</li>
+          <li>Close corporate tax loopholes that benefit large developers at the expense of local homeowners</li>
+          <li>Oppose policies that allow utility monopolies to pass infrastructure costs onto consumers</li>
+          <li>Support living wage legislation so that a full-time worker in Gainesville or Ocala can afford a dignified life</li>
+          <li>Fight to lower prescription drug costs and healthcare premiums for working families</li>
+        </ul>
+        <h4>Why It Matters to District 21</h4>
+        <p>Alachua and Marion Counties are home to students, seniors on fixed incomes, agricultural workers, and young families — all of whom are being priced out of the state they call home. Dr. Doré will fight for policies that make Florida affordable again for the people who actually live and work here.</p>
+      `
+    },
+    environment: {
+      icon: '🌿',
+      title: 'Environment',
+      body: `
+        <h4>The Problem</h4>
+        <p>Florida is one of the most environmentally vulnerable states in the nation — and one of the most threatened by inaction. Sea level rise, toxic algae blooms, aquifer depletion, and the destruction of natural habitats are accelerating. Weak environmental regulation has allowed developers and agricultural interests to prioritize profit over Florida's ecological future.</p>
+        <h4>What Dr. Doré Will Fight For</h4>
+        <ul>
+          <li>Protect the Floridan Aquifer — the primary drinking water source for Alachua and Marion Counties — from pollution and over-extraction</li>
+          <li>Strengthen water quality regulations and hold polluters accountable for toxic discharges into springs, rivers, and coastal waters</li>
+          <li>Oppose legislation that weakens environmental permitting and review processes</li>
+          <li>Invest in conservation land purchases to protect natural habitat and Florida's biodiversity</li>
+          <li>Support renewable energy incentives that reduce dependence on fossil fuels and lower utility bills</li>
+          <li>Champion climate resilience planning at the local and state level</li>
+        </ul>
+        <h4>Why It Matters to District 21</h4>
+        <p>The springs, forests, and farmlands of north-central Florida are not just beautiful — they are the economic and ecological foundation of our region. Dr. Doré will protect them for this generation and the next.</p>
+      `
+    },
+    safety: {
+      icon: '🛡️',
+      title: 'Public Safety',
+      body: `
+        <h4>The Problem</h4>
+        <p>Public safety is not just about policing — it is about creating communities where people do not feel desperate, marginalized, or untreated. Florida's approach of mass incarceration and underfunded social services has not made communities safer. It has made cycles of poverty and crime harder to break.</p>
+        <h4>What Dr. Doré Will Fight For</h4>
+        <ul>
+          <li>Invest in evidence-based mental health and addiction treatment as an alternative to incarceration for non-violent offenders</li>
+          <li>Support community policing models that build trust between law enforcement and the communities they serve</li>
+          <li>Fund violence interruption programs proven to reduce crime in high-risk neighborhoods</li>
+          <li>Oppose policies that criminalize homelessness without providing meaningful pathways to housing and treatment</li>
+          <li>Strengthen gun safety laws, including universal background checks and red flag enforcement</li>
+          <li>Ensure that victims of crime receive adequate support, resources, and a responsive justice system</li>
+        </ul>
+        <h4>Why It Matters to District 21</h4>
+        <p>Dr. Doré believes that safe communities are built on investment, not just enforcement. As a physician who has treated trauma, he understands the human cost of violence — and the importance of addressing its root causes in Gainesville, Ocala, and every community in between.</p>
+      `
+    }
+  };
+
+  // ── PRIORITY MODAL LOGIC ──
+  const backdrop = document.getElementById('pmodal-backdrop');
+  const pmodalIcon = document.getElementById('pmodal-icon');
+  const pmodalTitle = document.getElementById('pmodal-title');
+  const pmodalBody = document.getElementById('pmodal-body');
+  const pmodalClose = document.getElementById('pmodal-close');
+  const pmodalClose2 = document.getElementById('pmodal-close-2');
+
+  function openModal(key) {
+    const data = modalData[key];
+    if (!data) return;
+    pmodalIcon.textContent = data.icon;
+    pmodalTitle.textContent = data.title;
+    pmodalBody.innerHTML = data.body;
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    pmodalClose.focus();
+  }
+
+  function closeModal() {
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.priority-card[data-modal]').forEach(card => {
+    card.addEventListener('click', () => openModal(card.dataset.modal));
+  });
+
+  pmodalClose.addEventListener('click', closeModal);
+  pmodalClose2.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
